@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.name = 'streak_api'
   spec.platform = Gem::Platform::RUBY
   spec.require_paths = ['lib']
-  spec.required_rubygems_version = Gem::Requirement.new('>= 1.3.6') if s.respond_to? :required_rubygems_version=
+  spec.required_rubygems_version = Gem::Requirement.new('>= 1.3.6') if spec.respond_to? :required_rubygems_version=
   spec.rubyforge_project = spec.name
   spec.summary = spec.description
   spec.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
