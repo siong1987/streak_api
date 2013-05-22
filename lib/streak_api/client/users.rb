@@ -12,6 +12,14 @@ module StreakAPI
         response = get("users/#{id}", options)
         response
       end
+
+      private
+        # Returns the configured display name
+        #
+        # @return [String]
+        def get_display_name
+          @display_name ||= self.user.display_name
+        end
     end
   end
 end

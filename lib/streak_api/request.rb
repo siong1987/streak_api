@@ -26,7 +26,6 @@ module StreakAPI
     # Perform an HTTP request
     def request(method, path, options, raw=false, unformatted=false, no_response_wrapper=false)
       response = connection(raw).send(method) do |request|
-        path = formatted_path(path) unless unformatted
         case method
         when :get, :delete
           request.url(path, options)
@@ -38,10 +37,6 @@ module StreakAPI
       return response if raw
       return response.body if no_response_wrapper
       return Response.create( response.body )
-    end
-
-    def formatted_path(path)
-      [path, format].compact.join('.')
     end
   end
 end
